@@ -14,6 +14,10 @@ public abstract class Site {
         return getBaseAmount() + getTaxAmount();
     }
 
+    protected abstract double getBaseAmount();
+    protected abstract double getTaxAmount();
+
+
 
     public double getUnits() { return units; }
     public double getRate() { return rate; }
