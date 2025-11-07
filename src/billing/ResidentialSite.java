@@ -8,9 +8,17 @@ public class ResidentialSite extends Site {
 
     @Override
     public double getBillableAmount() {
-        // Example differences vs LifelineSite: discounted base and lower taxable portion
-        double base = units * rate * 0.5;            // 50% discount tier
-        double tax  = base * Site.TAX_RATE * 0.2;    // only 20% of base is taxed
+        double base = getBaseAmount();
+        double tax = getTaxAmount();
         return base + tax;
+    }
+
+    private double getBaseAmount() {            // currently private
+        return units * rate * 0.5;
+    }
+
+    private double getTaxAmount() {
+        double base = getBaseAmount();
+        return base * Site.TAX_RATE * 0.2;
     }
 }
