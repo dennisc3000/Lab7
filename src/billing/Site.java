@@ -10,8 +10,10 @@ public abstract class Site {
         this.rate = rate;
     }
 
-    /** Subclasses currently compute the whole bill (pre-refactor). */
-    public abstract double getBillableAmount();
+    public final double getBillableAmount() {
+        return getBaseAmount() + getTaxAmount();
+    }
+
 
     public double getUnits() { return units; }
     public double getRate() { return rate; }
