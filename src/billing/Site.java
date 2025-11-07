@@ -10,10 +10,12 @@ public abstract class Site {
         this.rate = rate;
     }
 
+    /** Template Method: skeleton algorithm. */
     public final double getBillableAmount() {
         return getBaseAmount() + getTaxAmount();
     }
 
+    /** Primitive operations implemented by subclasses. */
     protected abstract double getBaseAmount();
     protected abstract double getTaxAmount();
 
