@@ -8,10 +8,17 @@ public class LifelineSite extends Site {
 
     @Override
     public double getBillableAmount() {
-        // Full base and full tax (different constants vs ResidentialSite)
-        double base = units * rate;
-        double tax  = base * Site.TAX_RATE;
+        double base = getBaseAmount();
+        double tax = getTaxAmount();
         return base + tax;
+    }
+
+    private double getBaseAmount() {
+        return units * rate;
+    }
+
+    private double getTaxAmount() {
+        return getBaseAmount() * Site.TAX_RATE;
     }
 }
 
