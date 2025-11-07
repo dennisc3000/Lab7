@@ -8,9 +8,7 @@ public class ResidentialSite extends Site {
 
     @Override
     public double getBillableAmount() {
-        double base = getBaseAmount();
-        double tax = getTaxAmount();
-        return base + tax;
+        return getBaseAmount() + getTaxAmount();
     }
 
     protected double getBaseAmount() {            // currently private
