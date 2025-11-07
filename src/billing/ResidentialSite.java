@@ -13,11 +13,11 @@ public class ResidentialSite extends Site {
         return base + tax;
     }
 
-    private double getBaseAmount() {            // currently private
+    protected double getBaseAmount() {            // currently private
         return units * rate * 0.5;
     }
 
-    private double getTaxAmount() {
+    protected double getTaxAmount() {
         double base = getBaseAmount();
         return base * Site.TAX_RATE * 0.2;
     }
